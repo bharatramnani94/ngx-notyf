@@ -1,0 +1,21 @@
+{
+  "name": "ngx-notyf",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bharatramnani94/ngx-notyf"
+  },
+  "author": {
+    "name": "Bharat Ramnani",
+    "email": "bharatramnani94@gmail.com"
+  },
+  "contributors": [{
+    "name": "Carlos Roso",
+    "email": "ce.roso398@gmail.com"
+  }],
+  "peerDependencies": {
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "tslib": "^1.10.0"
+  }
+}
