@@ -2,7 +2,7 @@
 A minimal Angular wrapper for https://github.com/caroso1222/notyf
 
 ## Note
-This library is still not published to npm. So your import statements won't actually work right now (unless you know how to use a library without npm).
+This library is **not published** to npm yet. So your import statements won't actually work right now (unless you know how to use a library without npm).
 
 ## Usage
 To refer to the config and api and options and everything else, refer the original source at https://github.com/caroso1222/notyf
