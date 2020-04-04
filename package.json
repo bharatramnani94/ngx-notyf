@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lib:build": "ng build ngx-notyf"
+    "lib:build": "ng build ngx-notyf --prod",
+    "lib:package": "cd dist/ngx-notyf && npm pack && cd ../..",
+    "lib:publish": "cd dist/ngx-notyf && npm publish . --access public && cd ../.."
   },
   "private": false,
   "repository": {
