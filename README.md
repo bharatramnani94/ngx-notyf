@@ -7,6 +7,13 @@ while things are developing here.
 
 And here's how you will use those options in your project:
 
+Install the package:
+```bash
+npm install ngx-notyf
+# OR
+yarn add ngx-notyf
+```
+
 Import the module in your project (usually in `app.module.ts`):
 
 ```typescript
