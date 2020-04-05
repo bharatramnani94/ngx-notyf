@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
-import { Notyf, INotyfOptions, DEFAULT_OPTIONS } from 'notyf';
+import { Notyf } from 'notyf';
+import { NgxNotyfService } from './ngx-notyf.service';
 
 
 @Component({
@@ -11,25 +12,28 @@ import { Notyf, INotyfOptions, DEFAULT_OPTIONS } from 'notyf';
 export class NgxNotyfComponent implements OnInit, OnDestroy {
 
   @Input() message: string = "Uh Oh! You forgot to provide 'message' again??"
-  @Input() config: Partial<INotyfOptions> = {};
   @Input() type: string = "error"; // Default types: 'success', 'error'; Rest can be made custom using `types` in config
+  @Input() notyfInstance?: Notyf = this.getDefaultInstance();
 
-  public notyf: any;
-
-  constructor() {}
+  constructor(
+    private ngxNotyfService: NgxNotyfService
+  ) {
+  }
 
   ngOnInit(): void {
-    this.config = { ...DEFAULT_OPTIONS, ...this.config };
-    this.notyf = new Notyf(this.config);
-    this.notyf.open({
+    this.notyfInstance.open({
       type: this.type,
       message: this.message,
     });
   }
 
   ngOnDestroy(): void {
-    if (this.notyf) {
-      this.notyf.dismissAll();
+    if (this.notyfInstance) {
+      this.notyfInstance.dismissAll();
     }
+  }
+
+  private getDefaultInstance(): Notyf {
+    return this.ngxNotyfService.getInstance();
   }
 }

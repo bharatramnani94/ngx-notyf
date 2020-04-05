@@ -1,1 +1,3 @@
-<ngx-notyf [config]="config" [message]="message" [type]="type"></ngx-notyf>
+<ngx-notyf [notyfInstance]="notyfInstance1" message="message 1, Using Instance1" type="success"></ngx-notyf>
+<ngx-notyf [notyfInstance]="notyfInstance2" message="message 2, Using Instance2" type="error"></ngx-notyf>
+<ngx-notyf message="message 3, without explicit instance, using last config" type="error"></ngx-notyf>
