@@ -31,32 +31,28 @@ imports: [
 Then simply start using it in your views (such as in `app.component.html`):
 
 ```html
-<ngx-notyf [config]="config" [message]="message" [type]="type"></ngx-notyf>
+<ngx-notyf [message]="message" [type]="type"></ngx-notyf>
 ```
 
 where the inputs are defined in _ts_ file (such as in `app.component.ts`):
 
 ```typescript
-  message = "Send us an email to get support";
-  type: "success" | "error" | string = "info";
-  config: Partial<INotyfOptions> = {
-    duration: 100 * 1000,
-    ripple: false,
-    position: {
-      x: "right",
-      y: "top",
-    },
-    types: [
-      {
-        type: "info",
-        background: "#2196f3",
+  message: string = "Success! You did something good!";
+  type: "success" | "error" = "success";
+```
+
+Another way to use it is via service:
+
+
+```typescript
+  constructor(private ngxNotyfService: NgxNotyfService) {}
+  ngOnInit(): void {
+    const options: Partial<INotyfOptions> = {
+      position: {
+        x: "left",
+        y: "top",
       },
-      {
-        type: "error",
-        background: "indianred",
-        duration: 2000,
-        dismissible: true,
-      },
-    ],
-  };
+    };
+    const notyfInstance = this.ngxNotyfService.setOptions();
+  }
 ```
