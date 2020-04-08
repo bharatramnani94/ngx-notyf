@@ -20,17 +20,17 @@ export class AppComponent implements OnInit {
     this.notyfInstance1 = this.ngxNotyfService.setOptions({
       position: {
         x: "left",
-        y: "bottom",
+        y: "top",
       },
     });
     this.notyfInstance2 = this.ngxNotyfService.setOptions({
       position: {
-        x: "right",
+        x: "left",
         y: "bottom",
       },
     });
-    this.notyfInstance1.success("Yes! Something was successful!");
-    this.notyfInstance2.error("Uh Oh! Something went wrong!");
+    this.notyfInstance1.success("Message1, Using Instance1, Using Service");
+    this.notyfInstance2.error("Message2, Using Instance2, Using Service");
   }
 
 
