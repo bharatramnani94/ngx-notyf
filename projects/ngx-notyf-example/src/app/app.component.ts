@@ -17,20 +17,28 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    // Without explicit instance/config
+    this.ngxNotyfService.success("Message, Without explicit instance, Using Service");
+
+    // With explicit instance/config
     this.notyfInstance1 = this.ngxNotyfService.setOptions({
       position: {
         x: "left",
         y: "top",
       },
+      duration: 4000
     });
     this.notyfInstance2 = this.ngxNotyfService.setOptions({
       position: {
         x: "left",
         y: "bottom",
       },
+      duration: 6000
     });
-    this.notyfInstance1.success("Message1, Using Instance1, Using Service");
+    this.notyfInstance1.error("Message1, Using Instance1, Using Service");
     this.notyfInstance2.error("Message2, Using Instance2, Using Service");
+
   }
 
 

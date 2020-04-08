@@ -46,13 +46,22 @@ Another way to use it is via service:
 
 ```typescript
   constructor(private ngxNotyfService: NgxNotyfService) {}
+
   ngOnInit(): void {
+
+    // Method 1 - Default options
+    this.ngxNotyfService.success("Success! You did something good!");
+
+    // Method 2 - Custom instance for finer control using custom options
     const options: Partial<INotyfOptions> = {
       position: {
         x: "left",
         y: "top",
       },
     };
-    const notyfInstance = this.ngxNotyfService.setOptions();
+    const notyfInstance = this.ngxNotyfService.setOptions(options);
+    notyfInstance.success("Success! You did something good towards the top-left!");
+
   }
+
 ```
